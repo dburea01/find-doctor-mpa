@@ -1,0 +1,25 @@
+<?php
+namespace Database\Seeders;
+
+use App\Models\User;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class UserSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        User::factory()->create([
+            'role_id' => 'ADMIN'
+        ]);
+
+        User::factory()->count(100)->create([
+            'role_id' => 'PRACTI'
+        ]);
+    }
+}
