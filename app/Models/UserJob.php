@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,7 +13,7 @@ class UserJob extends Model
 
     protected $fillable = [
         'user_id',
-        'job_id'
+        'job_id',
     ];
 
     public function user(): BelongsTo

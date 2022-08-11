@@ -1,8 +1,9 @@
 <?php
+
 namespace App\Models;
 
-use Spatie\Translatable\HasTranslations;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Civility extends Model
 {
@@ -16,7 +17,7 @@ class Civility extends Model
     public $translatable = ['short_name', 'name'];
 
     protected $hidden = [
-        'created_at', 'updated_at'
+        'created_at', 'updated_at',
     ];
 
     protected $fillable = [
@@ -24,6 +25,6 @@ class Civility extends Model
         'short_name',
         'name',
         'is_active',
-        'position'
+        'position',
     ];
 }

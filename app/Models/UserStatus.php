@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -22,6 +23,6 @@ class UserStatus extends Model
     ];
 
     public $translatable = [
-        'name', 'comment'
+        'name', 'comment',
     ];
 }

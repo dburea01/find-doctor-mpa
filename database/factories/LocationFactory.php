@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\City;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class UserLanguageFactory extends Factory
+class LocationFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,11 +17,11 @@ class UserLanguageFactory extends Factory
      */
     public function definition()
     {
-        $languages = ['en', 'fr', 'it'];
-
         return [
-            'language_id' => fake()->randomElement($languages),
-            'created_by' => 'factory',
+            'name' => 'location '.fake()->word,
+            'address1' => fake()->streetName(),
+            'city_id' => City::inRandomOrder()->first()->id,
+            'comment' => fake()->paragraph(),
         ];
     }
 }

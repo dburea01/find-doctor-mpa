@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class UserLanguageFactory extends Factory
+class UserLocationFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,11 +16,8 @@ class UserLanguageFactory extends Factory
      */
     public function definition()
     {
-        $languages = ['en', 'fr', 'it'];
-
         return [
-            'language_id' => fake()->randomElement($languages),
-            'created_by' => 'factory',
+
         ];
     }
 }

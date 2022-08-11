@@ -1,9 +1,10 @@
 <?php
+
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Job extends Model
 {
@@ -12,7 +13,7 @@ class Job extends Model
     public $translatable = ['name', 'description'];
 
     protected $hidden = [
-        'created_at', 'updated_at'
+        'created_at', 'updated_at',
     ];
 
     protected $fillable = [
@@ -20,7 +21,7 @@ class Job extends Model
         'name',
         'description',
         'is_active',
-        'position'
+        'position',
     ];
 
     protected function name(): Attribute

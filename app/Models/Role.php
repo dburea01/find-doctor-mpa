@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -16,13 +17,13 @@ class Role extends Model
     public $translatable = ['name'];
 
     protected $hidden = [
-        'created_at', 'updated_at'
+        'created_at', 'updated_at',
     ];
 
     protected $fillable = [
         'id',
         'name',
         'is_active',
-        'position'
+        'position',
     ];
 }

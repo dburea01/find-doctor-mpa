@@ -13,15 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_languages', function (Blueprint $table) {
+        Schema::create('user_locations', function (Blueprint $table) {
             $table->id();
             $table->uuid('user_id');
-            $table->string('language_id', 10);
+            $table->uuid('location_id');
+
             $table->timestamps();
             $table->string('created_by');
+            $table->string('updated_by')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
-            $table->foreign('language_id')->references('id')->on('languages')->cascadeOnDelete();
+            $table->foreign('location_id')->references('id')->on('locations')->cascadeOnDelete();
+            $table->unique(['user_id', 'location_id']);
         });
     }
 
@@ -32,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_languages');
+        Schema::dropIfExists('user_locations');
     }
 };

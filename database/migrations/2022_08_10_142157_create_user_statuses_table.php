@@ -5,7 +5,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class() extends Migration {
+return new class() extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -30,7 +31,7 @@ return new class() extends Migration {
                 ],
                 'comment' => [
                     'fr' => 'Utilisateur a été créé, mais ne peut pas se connecter.',
-                    'en' => 'User has been created, but can not still login.'
+                    'en' => 'User has been created, but can not still login.',
                 ],
                 'position' => 10,
             ],
@@ -42,7 +43,7 @@ return new class() extends Migration {
                 ],
                 'comment' => [
                     'fr' => 'Utilisateur a été validé, peut se connecter.',
-                    'en' => 'User has been created, can login.'
+                    'en' => 'User has been created, can login.',
                 ],
                 'position' => 20,
             ],
@@ -54,7 +55,7 @@ return new class() extends Migration {
                 ],
                 'comment' => [
                     'fr' => 'Utilisateur a été suspendu, ne peut plus se connecter.',
-                    'en' => 'User has been holded, can not login anymore.'
+                    'en' => 'User has been holded, can not login anymore.',
                 ],
                 'position' => 30,
             ],

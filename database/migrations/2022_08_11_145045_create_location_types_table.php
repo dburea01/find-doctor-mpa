@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Job;
+use App\Models\LocationType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,10 +14,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jobs', function (Blueprint $table) {
+        Schema::create('location_types', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
+            $table->json('name');
             $table->boolean('is_active')->default('true');
             $table->tinyInteger('position');
             $table->timestamps();
@@ -25,88 +24,80 @@ return new class extends Migration
             $table->string('updated_by')->nullable();
         });
 
-        $jobs = [
+        $locationTypes = [
             [
                 'name' => [
-                    'en' => 'Doctor',
-                    'fr' => 'Médecin',
+                    'en' => 'Medical office',
+                    'fr' => 'Cabinet médical',
                 ],
                 'position' => 10,
             ],
             [
                 'name' => [
-                    'en' => 'Dental Surgeon',
-                    'fr' => 'Chirurgien-Dentiste',
+                    'en' => 'Dental office',
+                    'fr' => 'Cabinet dentaire',
                 ],
                 'position' => 20,
             ],
             [
                 'name' => [
-                    'en' => 'Pharmacist',
-                    'fr' => 'Pharmacien',
+                    'en' => 'Paramedical office',
+                    'fr' => 'Cabinet périmédical',
                 ],
                 'position' => 30,
             ],
             [
                 'name' => [
-                    'en' => 'Midwife',
-                    'fr' => 'Sage-femme',
+                    'en' => 'Medical imaging office',
+                    'fr' => 'Centre d\'imagerie médicale',
                 ],
                 'position' => 40,
             ],
             [
                 'name' => [
-                    'en' => 'Surgeon',
-                    'fr' => 'Chirurgien',
+                    'en' => 'Nursing office',
+                    'fr' => 'Centre de soins infirmiers',
                 ],
                 'position' => 50,
             ],
             [
                 'name' => [
-                    'en' => 'Gynaecologist',
-                    'fr' => 'Gynécologue',
+                    'en' => 'Public hospital',
+                    'fr' => 'Hôpital public',
                 ],
                 'position' => 60,
             ],
             [
                 'name' => [
-                    'en' => 'Cardiologist',
-                    'fr' => 'Cardiologue',
+                    'en' => 'Clinic',
+                    'fr' => 'Clinique',
                 ],
                 'position' => 70,
             ],
             [
                 'name' => [
-                    'en' => 'Psychiatrist',
-                    'fr' => 'Psychiatre',
+                    'en' => 'Public hospital',
+                    'fr' => 'Hôpital public',
                 ],
                 'position' => 80,
-            ],
-            [
+            ], [
                 'name' => [
-                    'en' => 'Pediatrician',
-                    'fr' => 'Pédiatre',
+                    'en' => 'Retirement home',
+                    'fr' => 'Maison de retraite',
                 ],
                 'position' => 90,
             ],
             [
                 'name' => [
-                    'en' => 'Dermatologist',
-                    'fr' => 'Dermatologue',
+                    'en' => 'Maternity hospital',
+                    'fr' => 'Maternité',
                 ],
                 'position' => 100,
             ],
-            [
-                'name' => [
-                    'en' => 'Ophthalmologist',
-                    'fr' => 'Ophtalmologue',
-                ],
-                'position' => 110,
-            ],
         ];
 
-        foreach ($jobs as $job) {
-            Job::create($job);
+        foreach ($locationTypes as $locationType) {
+            LocationType::create($locationType);
         }
     }
 
@@ -117,6 +108,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jobs');
+        Schema::dropIfExists('location_types');
     }
 };

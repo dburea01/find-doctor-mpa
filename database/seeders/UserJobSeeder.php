@@ -1,11 +1,10 @@
 <?php
+
 namespace Database\Seeders;
 
 use App\Models\Job;
-use App\Models\Language;
 use App\Models\User;
 use App\Models\UserJob;
-use App\Models\UserLanguage;
 use Illuminate\Database\Seeder;
 
 class UserJobSeeder extends Seeder

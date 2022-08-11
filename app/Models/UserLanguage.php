@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,7 +12,7 @@ class UserLanguage extends Model
 
     protected $fillable = [
         'user_id',
-        'language_id'
+        'language_id',
     ];
 
     public function user(): BelongsTo

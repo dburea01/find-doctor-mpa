@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -16,7 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             UserLanguageSeeder::class,
-            UserJobSeeder::class
+            UserJobSeeder::class,
+            LocationSeeder::class,
+            UserLocationSeeder::class,
         ]);
     }
 }

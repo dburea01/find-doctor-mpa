@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use App\Models\Language;
@@ -22,7 +23,7 @@ class UserLanguageSeeder extends Seeder
             for ($i = 0; $i < random_int(1, count($languages)); $i++) {
                 UserLanguage::factory()->create([
                     'user_id' => $user->id,
-                    'language_id' => $languages[$i]->id
+                    'language_id' => $languages[$i]->id,
                 ]);
             }
         }

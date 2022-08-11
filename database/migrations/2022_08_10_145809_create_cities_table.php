@@ -5,7 +5,8 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -13,7 +14,7 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('postal_codes', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->id();
             $table->string('country_id', 2);
             $table->string('city_id');
@@ -36,14 +37,14 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('postal_codes');
+        Schema::dropIfExists('cities');
     }
 
     private function initDatabase()
     {
         DB::insert("
 
-          insert into postal_codes (country_id,city_id,name,zip_code,gps_coordinates, created_at) values
+          insert into cities (country_id,city_id,name,zip_code,gps_coordinates, created_at) values
 ('FR','01001','L ABERGEMENT CLEMENCIAT','01400','46.153721024, 4.925850148',now()),
 ('FR','01002','L ABERGEMENT DE VAREY','01640','46.009605679, 5.428087796',now()),
 ('FR','01004','AMBERIEU EN BUGEY','01500','45.961048852, 5.372275427',now()),
