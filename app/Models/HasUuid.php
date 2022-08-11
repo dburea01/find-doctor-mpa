@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Support\Facades\Auth;
@@ -16,11 +15,6 @@ trait HasUuid
     {
         static::creating(function ($model) {
             $model->id = Uuid::uuid4()->toString();
-            $model->created_by = Auth::check() ? Auth::user()->name : '?';
-        });
-
-        static::updating(function ($model) {
-            $model->updated_by = Auth::check() ? Auth::user()->name : '?';
         });
     }
 }
