@@ -1,0 +1,32 @@
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+main > .container {
+    padding: 15px 15px 0;
+  }
+  
+  .footer, .navbar-menu{
+    background-color: lightgray;
+  }
+  
+  
+  
+  .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  code {
+    font-size: 80%;
+  }
+  
+  body {
+    background-color: rgb(235, 243, 243);
+    color: darkslategray;
+  }
+  
+  .header-table {
+    background-color: indigo;
+    color: white
+  }
