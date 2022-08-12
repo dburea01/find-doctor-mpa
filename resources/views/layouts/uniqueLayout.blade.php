@@ -19,23 +19,23 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 
   <link rel="icon" href="{{ asset('img/carre_vert_48_48.png') }}" type="image/png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   @if (App::environment('production'))
 
-  <!--
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QK4TTC0E3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
 
-    gtag('config', 'G-8QK4TTC0E3');
+          gtag('config', 'G-8QK4TTC0E3');
   </script>
-  -->
+
   @endif
 </head>
 
@@ -45,7 +45,7 @@
 
     <nav class="navbar navbar-expand-md navbar-menu navbar-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/"><i class="fa fa-home">&nbsp;</i> LOGO</a>
+        <a class="navbar-brand" href="/"><i class="bi bi-house"></i> LOGO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon">&nbsp;</span>
@@ -132,8 +132,7 @@
   </footer>
 
   @yield('additional_js_beforebs')
-  <script src="https://kit.fontawesome.com/1b94bb6a0c.js" crossorigin="anonymous"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script> -->
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
 
