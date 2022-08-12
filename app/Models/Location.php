@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -26,5 +25,6 @@ class Location extends Model
         'address3',
         'city_id',
         'comment',
+        'web_site'
     ];
 }

@@ -1,8 +1,9 @@
 <?php
-
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\LocationContact;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
             UserJobSeeder::class,
             LocationSeeder::class,
             UserLocationSeeder::class,
+            LocationContactSeeder::class
         ]);
     }
 }

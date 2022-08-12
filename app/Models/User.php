@@ -32,6 +32,7 @@ class User extends Authenticatable
         'password',
         'user_status_id',
         'is_contracted',
+        'web_site',
     ];
 
     /**

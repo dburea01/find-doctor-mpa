@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\City;
@@ -18,10 +17,11 @@ class LocationFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'location '.fake()->word,
+            'name' => 'location ' . fake()->word,
             'address1' => fake()->streetName(),
             'city_id' => City::inRandomOrder()->first()->id,
             'comment' => fake()->paragraph(),
+            'web_site' => fake()->url(),
         ];
     }
 }
