@@ -3,6 +3,9 @@
 @section('title', 'accueil')
 
 @section('content')
+
+
+
 <div class="row">
 
 
@@ -24,4 +27,6 @@
     </div>
 
 </div>
+
+<x-form-search-user />
 @endsection
