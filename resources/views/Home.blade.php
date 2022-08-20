@@ -27,6 +27,5 @@
     </div>
 
 </div>
-
 <x-form-search-user />
 @endsection

@@ -6,17 +6,19 @@ use Illuminate\View\Component;
 class FormSearchUser extends Component
 {
     public $search;
-    public $city;
+    public $filterByCityId;
+    public $cityName;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($search, $city)
+    public function __construct($search = '', $filterByCityId = '', $cityName = '')
     {
         $this->search = $search;
-        $this->city = $city;
+        $this->filterByCityId = $filterByCityId;
+        $this->cityName = $cityName;
     }
 
     /**

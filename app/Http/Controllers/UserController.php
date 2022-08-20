@@ -23,8 +23,8 @@ class UserController extends Controller
         return view('users.users', [
             'users' => $users,
             'search' => $request->query('search'),
-            'city' => $request->query('city'),
-
+            'filterByCityId' => $request->query('filterByCityId'),
+            'cityName' => $request->query('cityName'),
         ]);
     }
 

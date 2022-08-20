@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Middleware;
 
 use Closure;
@@ -19,10 +18,10 @@ class Localization
     {
         if (session()->has('locale')) {
             App::setLocale(session()->get('locale'));
-        }
-
-        if ($request->hasCookie('locale')) {
+        } elseif ($request->hasCookie('locale')) {
             session()->put('locale', $request->cookie('locale'));
+        } else {
+            session()->put('locale', App::getLocale());
         }
 
         return $next($request);

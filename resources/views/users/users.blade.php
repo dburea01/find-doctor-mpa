@@ -3,13 +3,10 @@
 
 @section('content')
 
-<x-form-search-user :search="$search" :city="$city" />
+<x-form-search-user :search="$search" :filterByCityId="$filterByCityId" :cityName="$cityName" />
 
 @foreach ($users as $user)
-<div class="row">
-    {{ $user->full_name }}
-</div>
-
+<x-display-user :user="$user" />
 @endforeach
 
 @if($users->hasPages())
