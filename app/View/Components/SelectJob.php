@@ -1,13 +1,12 @@
 <?php
 namespace App\View\Components;
 
+use App\Models\Job;
 use Illuminate\View\Component;
 
-class FormSearchUser extends Component
+class SelectJob extends Component
 {
-    public $search;
-    public $filterByCityId;
-    public $cityName;
+    public $jobs;
     public $filterByJobId;
 
     /**
@@ -15,12 +14,10 @@ class FormSearchUser extends Component
      *
      * @return void
      */
-    public function __construct($search = '', $filterByCityId = '', $cityName = '', $filterByJobId = '')
+    public function __construct(string $filterByJobId = '')
     {
-        $this->search = $search;
-        $this->filterByCityId = $filterByCityId;
-        $this->cityName = $cityName;
         $this->filterByJobId = $filterByJobId;
+        $this->jobs = Job::orderBy('position')->get();
     }
 
     /**
@@ -30,6 +27,6 @@ class FormSearchUser extends Component
      */
     public function render()
     {
-        return view('components.form-search-user');
+        return view('components.select-job');
     }
 }

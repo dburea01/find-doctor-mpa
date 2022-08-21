@@ -12,11 +12,17 @@ class UserRepository
 
         $usersQuery = User::orderBy('last_name');
 
-        $usersQuery->with(['jobs', 'languages']);
+        $usersQuery->with(['languages', 'civility']);
 
         $usersQuery->withWhereHas('locations', function ($query) use ($filters) {
             if (array_key_exists('filterByCityId', $filters) && $filters['filterByCityId'] !== null) {
                 $query->where('locations.city_id', $filters['filterByCityId']);
+            }
+        });
+
+        $usersQuery->withWhereHas('jobs', function ($query) use ($filters) {
+            if (array_key_exists('filterByJobId', $filters) && $filters['filterByJobId'] !== null) {
+                $query->where('jobs.id', $filters['filterByJobId']);
             }
         });
 

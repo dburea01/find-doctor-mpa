@@ -25,6 +25,7 @@ class UserController extends Controller
             'search' => $request->query('search'),
             'filterByCityId' => $request->query('filterByCityId'),
             'cityName' => $request->query('cityName'),
+            'filterByJobId' => $request->query('filterByJobId')
         ]);
     }
 

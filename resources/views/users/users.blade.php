@@ -3,7 +3,8 @@
 
 @section('content')
 
-<x-form-search-user :search="$search" :filterByCityId="$filterByCityId" :cityName="$cityName" />
+<x-form-search-user :search="$search" :filterByCityId="$filterByCityId" :cityName="$cityName"
+    :filterByJobId="$filterByJobId" />
 
 @foreach ($users as $user)
 <x-display-user :user="$user" />
