@@ -8,7 +8,9 @@
         <a href="/users/{{$user->id}}">
             <h4 class="text-primary">{{ $user->full_name }}</h4>
         </a>
-        {{ $user->jobs[0]->name }}<br />
+
+        <x-display-jobs :jobs="$user->jobs" />
+        <br />
 
 
         @foreach ($user->locations as $location)

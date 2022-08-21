@@ -1,23 +1,21 @@
 <?php
 namespace App\View\Components;
 
-use App\Models\Job;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\View\Component;
 
-class SelectJob extends Component
+class DisplayJobs extends Component
 {
     public $jobs;
-    public $filterByJobId;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($filterByJobId = '')
+    public function __construct(Collection $jobs)
     {
-        $this->filterByJobId = $filterByJobId;
-        $this->jobs = Job::orderBy('position')->get();
+        $this->jobs = $jobs;
     }
 
     /**
@@ -27,6 +25,6 @@ class SelectJob extends Component
      */
     public function render()
     {
-        return view('components.select-job');
+        return view('components.display-jobs');
     }
 }

@@ -18,3 +18,4 @@ use App\Http\Controllers\UserController;
 Route::get('/', [HomeController::class, 'home']);
 Route::get('/change-locale/{lang}', [HomeController::class, 'changeLocale']);
 Route::get('/users', [UserController::class, 'index']);
+Route::get('/users/{user}', [UserController::class, 'show']);
