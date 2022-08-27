@@ -4,7 +4,7 @@ namespace App\View\Components;
 use App\Models\User;
 use Illuminate\View\Component;
 
-class displayUser extends Component
+class DisplayUser extends Component
 {
     public $user;
 

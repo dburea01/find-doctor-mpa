@@ -1,7 +1,7 @@
 <div class="row mb-3 p-3 border">
 
     <div class="col-2 text-center text-primary d-none d-sm-block">
-        <i class="bi bi-person-circle" style="font-size: 5rem;"></i>
+        <i class="bi bi-person-circle" aria-hidden="true" style="font-size: 5rem;"></i>
     </div>
 
     <div class=" col-10">

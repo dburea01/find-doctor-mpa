@@ -100,6 +100,5 @@ class User extends Authenticatable
     public function getFullNameAttribute(): string
     {
         return $this->civility->short_name . ' ' . $this->last_name . ' ' . $this->first_name;
-        // return $this->last_name . ' ' . $this->first_name;
     }
 }

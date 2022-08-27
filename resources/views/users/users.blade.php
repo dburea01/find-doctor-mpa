@@ -7,7 +7,7 @@
     :filterByJobId="$filterByJobId" />
 
 @foreach ($users as $user)
-<x-display-user :user="$user" />
+<x-display-user-row :user="$user" />
 @endforeach
 
 @if($users->hasPages())
