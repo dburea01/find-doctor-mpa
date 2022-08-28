@@ -18,7 +18,7 @@ class UserController extends Controller
 
     public function index(Request $request)
     {
-        $users = $this->userRepository->index($request->all());
+        $users = $this->userRepository->index($request->all(), 'PRACTI');
 
         return view('users.users', [
             'users' => $users,
@@ -56,10 +56,11 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(User $user, Request $request)
     {
         return view('users.user', [
             'user' => $user,
+            'currentLocationId' => $request->query('currentLocationId', $user->locations[0]->id)
         ]);
     }
 

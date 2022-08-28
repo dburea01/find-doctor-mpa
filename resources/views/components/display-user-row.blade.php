@@ -5,7 +5,7 @@
     </div>
 
     <div class=" col-10">
-        <a href="/users/{{$user->id}}">
+        <a href="/users/{{$user->id}}?location={{ $user->locations[0]->id }}">
             <h4 class="text-primary">{{ $user->full_name }}</h4>
         </a>
 
@@ -14,8 +14,17 @@
 
 
         @foreach ($user->locations as $location)
-        {{ $location->city->name }} ({{ $location->city->zip_code }}) -
+        <a href="/users/{{ $user->id }}?currentLocationId={{ $location->id }}" class="me-1">
+            <span class="badge text-bg-info">
+                {{ $location->city->name }}
+                ({{
+                $location->city->zip_code
+                }})</span>
+        </a>
         @endforeach
+
+
+
         <br>
         @foreach ($user->languages as $language)
         {{ $language->name}}

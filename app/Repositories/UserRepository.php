@@ -6,9 +6,9 @@ use Illuminate\Support\Facades\DB;
 
 class UserRepository
 {
-    public function index(array $filters)
+    public function index(array $filters, string $roleId)
     {
-        $usersQuery = User::orderBy('last_name')->with(['languages', 'civility']);
+        $usersQuery = User::where('role_id', $roleId)->orderBy('last_name')->with(['languages', 'civility']);
 
         $usersQuery->withWhereHas('locations', function ($query) use ($filters) {
             if (array_key_exists('filterByCityId', $filters) && $filters['filterByCityId'] !== null) {
